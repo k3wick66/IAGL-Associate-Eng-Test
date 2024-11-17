@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Todo from "./Todo";
-import { fetchTodos, addTodo } from "../actions"; 
+import { fetchTodos, addTodo } from "../actions"; // Adjusted path
 import { connect } from "react-redux";
 
 class TodoList extends Component {
