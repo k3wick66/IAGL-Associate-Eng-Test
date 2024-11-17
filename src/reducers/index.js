@@ -1,9 +1,13 @@
-import { FETCH_TODOS } from "../actions/types";
+import { FETCH_TODOS } from '../actions/types'; 
 
-export default function(state = {}, action) {
+const initialState = {
+  todos: []
+};
+
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_TODOS:
-      return { data: action.payload };
+      return { ...state, todos: action.payload };
     default:
       return state;
   }
