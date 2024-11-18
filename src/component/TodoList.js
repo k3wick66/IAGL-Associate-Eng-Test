@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Todo from "./Todo";
-import { fetchTodos, addTodo } from "../actions"; // Adjusted path
+import { fetchTodos, addTodo } from "../actions";
 import { connect } from "react-redux";
 
 class TodoList extends Component {
@@ -16,7 +16,7 @@ class TodoList extends Component {
   };
 
   render() {
-    const { todos } = this.props.data;
+    const { todos } = this.props;
     return (
       <div>
         <ul className="todo-list">
@@ -34,8 +34,8 @@ class TodoList extends Component {
   }
 }
 
-const mapStateToProps = ({ data = {} }) => ({
-  data,
+const mapStateToProps = (state) => ({
+  todos: state.todos,
 });
 
 export default connect(mapStateToProps, { fetchTodos, addTodo })(TodoList);
